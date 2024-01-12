@@ -27,6 +27,9 @@
     "./node-legacy": "./node-legacy.cjs"
   },
   "scripts": {
+    "lint": "npm run lint:spaces && npm run lint:scripts",
+    "lint:spaces": "ec",
+    "lint:scripts": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "github:koshikishi/eslint-config",
@@ -35,6 +38,10 @@
     "eslint-plugin-check-file": "^2.6.2",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-unicorn": "^50.0.1"
+  },
+  "devDependencies": {
+    "editorconfig-checker": "^5.1.2",
+    "eslint": "^8.56.0"
   },
   "peerDependencies": {
     "eslint": "^8.56.0"
