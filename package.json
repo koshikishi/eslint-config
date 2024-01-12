@@ -13,6 +13,7 @@
   "license": "MIT",
   "author": "Anton Northern",
   "files": [
+    "src",
     "./index.js",
     "./legacy.cjs",
     "./node.js",
