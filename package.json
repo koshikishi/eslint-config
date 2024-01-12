@@ -27,7 +27,10 @@
     "lint": "npm run lint:spaces && npm run lint:scripts",
     "lint:spaces": "ec",
     "lint:scripts": "eslint lib/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test",
+    "preversion": "npm run lint",
+    "postversion": "npm publish --access public",
+    "postpublish": "git push origin --all && git push origin --tags"
   },
   "repository": "github:koshikishi/eslint-config",
   "dependencies": {
