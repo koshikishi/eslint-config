@@ -1,0 +1,20 @@
+{
+  "name": "@koshikishi/eslint-config",
+  "version": "0.1.0",
+  "description": "ESLint shareable config",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "homepage": "https://github.com/koshikishi/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/koshikishi/eslint-config/issues"
+  },
+  "license": "MIT",
+  "author": "Anton Northern",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "github:koshikishi/eslint-config"
+}
