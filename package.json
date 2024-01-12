@@ -13,14 +13,14 @@
   "license": "MIT",
   "author": "Anton Northern",
   "files": [
-    "src"
+    "lib"
   ],
   "type": "module",
   "exports": {
-    ".": "./src/index.js",
-    "./legacy": "./src/legacy.cjs",
-    "./node": "./src/node.js",
-    "./node-legacy": "./src/node-legacy.cjs"
+    ".": "./lib/index.js",
+    "./legacy": "./lib/legacy.cjs",
+    "./node": "./lib/node.js",
+    "./node-legacy": "./lib/node-legacy.cjs"
   },
   "scripts": {
     "lint": "npm run lint:spaces && npm run lint:scripts",
