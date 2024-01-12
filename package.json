@@ -16,5 +16,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "github:koshikishi/eslint-config"
+  "repository": "github:koshikishi/eslint-config",
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^1.5.3",
+    "eslint-plugin-check-file": "^2.6.2",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-unicorn": "^50.0.1"
+  },
+  "peerDependencies": {
+    "eslint": "^8.56.0"
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
 }
