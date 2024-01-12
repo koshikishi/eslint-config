@@ -1,4 +1,4 @@
-const rules = require('./src/rules/vanilla.cjs');
+const rules = require('./rules/vanilla.cjs');
 
 module.exports = {
   extends: 'eslint:recommended',
