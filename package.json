@@ -14,12 +14,16 @@
   "author": "Anton Northern",
   "files": [
     "./index.js",
-    "./node.js"
+    "./legacy.cjs",
+    "./node.js",
+    "./node-legacy.cjs"
   ],
   "type": "module",
   "exports": {
     ".": "./index.js",
-    "./node": "./node.js"
+    "./legacy": "./legacy.cjs",
+    "./node": "./node.js",
+    "./node-legacy": "./node-legacy.cjs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
