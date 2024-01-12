@@ -12,7 +12,8 @@
   },
   "license": "MIT",
   "author": "Anton Northern",
-  "main": "index.js",
+  "type": "module",
+  "exports": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
