@@ -5,9 +5,7 @@ export default [
   ...config,
   {
     languageOptions: {
-      globals: {
-        ...globals.node,
-      },
+      globals: globals.node,
     },
   },
 ];
