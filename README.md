@@ -8,12 +8,6 @@ The ESLint shareable config designed for my personal projects.
 
 Use it as is or as a foundation for your own configuration file.
 
-This config bundles the following plugins and uses additional rules from them:
-
-- [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin) to replace deprecated formatting rules
-- [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file) to enforce a consistent naming pattern
-- [eslint-plugin-n](https://www.npmjs.com/package/eslint-plugin-n) and [eslint-plugin-unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn) for Node.js related rules
-
 ## Installation
 
 Install the package and `eslint` in your project:
@@ -22,13 +16,23 @@ Install the package and `eslint` in your project:
 npm i -D eslint @koshikishi/eslint-config
 ```
 
+### Plugins
+
+This config bundles the following plugins and uses additional rules from them:
+
+- [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin) to replace deprecated formatting rules
+- [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file) to enforce a consistent naming pattern
+- [eslint-plugin-n](https://www.npmjs.com/package/eslint-plugin-n) and [eslint-plugin-unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn) for Node.js related rules
+
+All plugins are direct dependencies and will be installed automatically.
+
 ## Usage
 
 This config is designed to validate **Vanilla JS** and **Node.js** projects, and also supports both [flat](https://eslint.org/docs/latest/use/configure/configuration-files-new) (`eslint.config.js`) and [legacy](https://eslint.org/docs/latest/use/configure/configuration-files) (`.eslintrc.*`) ESLint configuration files systems.
 
-### eslint.config.js
+### `eslint.config.js`
 
-**Note:** use of the flat config system requires ESLint v8.21.0 or higher.
+**Note:** usage of the flat config system requires ESLint v8.21.0 or higher.
 
 For validating your **Vanilla JS** project use the default config:
 
@@ -40,9 +44,7 @@ export default [
   ...config,
   {
     languageOptions: {
-      globals: {
-        ...globals.browser,
-      },
+      globals: globals.browser,
     },
   },
 ];
@@ -58,15 +60,35 @@ export default [
   ...config,
   {
     languageOptions: {
-      globals: {
-        ...globals.node,
-      },
+      globals: globals.node,
     },
   },
 ];
 ```
 
-### .eslintrc.*
+#### `globals` issue
+
+To specify global variables in your config, you will need the [globals](https://www.npmjs.com/package/globals) package, which is a direct dependency of ESLint. *Usually* you don't need to worry about it, but in some cases your other dependencies may require an older version of `globals`, which can lead to unexpected errors during linter checks.
+
+If you have this issue, you can work around it by importing global variables from `@eslint/eslintrc` rather than from `globals`:
+
+```js
+import config from '@koshikishi/eslint-config';
+import {Legacy} from '@eslint/eslintrc';
+
+const {globals} = Legacy.environments.get('browser');
+
+export default [
+  ...config,
+  {
+    languageOptions: {
+      globals,
+    },
+  },
+];
+```
+
+### `.eslintrc.*`
 
 **Note:** this config system will be deprecated in ESLint v9.0.0. Use it only if you need compatibility with older linter versions.
 
@@ -116,9 +138,7 @@ export default [
   ...config,
   {
     languageOptions: {
-      globals: {
-        ...globals.browser,
-      },
+      globals: globals.browser,
     },
     rules: {
       // Additional rule
@@ -161,7 +181,7 @@ Rule override for the legacy config is very similar in that it has the same synt
 }
 ```
 
-## Usage in VS Code
+## Integration with VS Code
 
 1. Install the ESLint [extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for VS Code.
 2. Install `eslint` and this config in your project following the [Installation](#installation) section.
