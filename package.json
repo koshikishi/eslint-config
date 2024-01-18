@@ -17,9 +17,15 @@
   ],
   "type": "module",
   "exports": {
-    ".": "./lib/index.js",
+    ".": {
+      "import": "./lib/vanilla.js",
+      "require": "./lib/vanilla.cjs"
+    },
     "./legacy": "./lib/legacy.cjs",
-    "./node": "./lib/node.js",
+    "./node": {
+      "import": "./lib/node.js",
+      "require": "./lib/node.cjs"
+    },
     "./node-legacy": "./lib/node-legacy.cjs"
   },
   "scripts": {
