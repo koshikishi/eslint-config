@@ -126,9 +126,11 @@ For validating your **Node.js** project use the `node-legacy` config:
 }
 ```
 
-## Rule overrides
+## Extending the config
 
-You can specify additional rules and override or turn off already set ones in the `rules` section of your config.
+Add a `rules` key to your config, then add your overrides and additions there.
+
+For example, to add the `no-eval` rule and turn off the `no-console` rule:
 
 ```js
 import config from '@koshikishi/eslint-config';
@@ -141,14 +143,28 @@ export default [
       globals: globals.browser,
     },
     rules: {
-      // Additional rule
       'no-eval': 'error',
-
-      // This rule is turned off
       'no-console': 'off',
+    },
+  },
+];
+```
 
-      // This rule has been changed
+You can also override the additional rules from plugins:
+
+```js
+import config from '@koshikishi/eslint-config/node';
+import globals from 'globals';
+
+export default [
+  ...config,
+  {
+    languageOptions: {
+      globals: globals.node,
+    },
+    rules: {
       '@stylistic/quotes': ['error', 'double'],
+      'n/file-extension-in-import': 'off',
     },
   },
 ];
@@ -169,13 +185,8 @@ Rule override for the legacy config is very similar in that it has the same synt
     "sourceType": "module"
   },
   "rules": {
-    // Additional rule
     "no-eval": "error",
-
-    // This rule is turned off
     "no-console": "off",
-
-    // This rule has been changed
     "@stylistic/quotes": ["error", "double"]
   }
 }
