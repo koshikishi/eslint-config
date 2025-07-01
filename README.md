@@ -112,8 +112,6 @@ export default [
 2. Install `eslint` and this config in your project following the [Installation](#installation) section.
 3. Add an ESLint configuration file (`eslint.config.js`) and extend it with this shareable config following the [Usage](#usage) section.
 
-**Note:** since support for the flat config system in VS Code ESLint extension is still experimental, you may need to enable it using the `eslint.experimental.useFlatConfig` setting.
-
 ## Useful links
 
 - [Changelog](CHANGELOG.md)
