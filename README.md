@@ -42,14 +42,10 @@ For validating your **Vanilla JS** project use the default config:
 ```js
 import {defineConfig} from 'eslint/config';
 import config from '@koshikishi/eslint-config';
-import globals from 'globals';
 
 export default defineConfig([
   {
     extends: [config],
-    languageOptions: {
-      globals: globals.browser,
-    },
   },
 ]);
 ```
@@ -59,14 +55,10 @@ For validating your **Node.js** project use the `node` config:
 ```js
 import {defineConfig} from 'eslint/config';
 import config from '@koshikishi/eslint-config/node';
-import globals from 'globals';
 
 export default defineConfig([
   {
     extends: [config],
-    languageOptions: {
-      globals: globals.node,
-    },
   },
 ]);
 ```
@@ -80,14 +72,10 @@ For example, to add the `no-eq-null` rule and turn off the `no-console` rule:
 ```js
 import {defineConfig} from 'eslint/config';
 import config from '@koshikishi/eslint-config';
-import globals from 'globals';
 
 export default defineConfig([
   {
     extends: [config],
-    languageOptions: {
-      globals: globals.browser,
-    },
     rules: {
       'no-eq-null': 'error',
       'no-console': 'off',
@@ -101,14 +89,10 @@ You can also override the additional rules from plugins:
 ```js
 import {defineConfig} from 'eslint/config';
 import config from '@koshikishi/eslint-config/node';
-import globals from 'globals';
 
 export default defineConfig([
   {
     extends: [config],
-    languageOptions: {
-      globals: globals.node,
-    },
     rules: {
       '@stylistic/quotes': ['error', 'double'],
       'n/file-extension-in-import': 'off',
