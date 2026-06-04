@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.1.0] - 2026-06-04
+
+### Changed
+
+- Enabled globals for a browser environment in **Vanilla JS** configuration file.
+- Enabled globals for a Node.js environment in **Node.js** configuration file.
+- Updated README.md.
+
+### Fixed
+
+- Error when loading recommended configuration files from `eslint-plugin-n` and `eslint-plugin-unicorn` in CommonJS modules.
+
 ## [5.0.0] - 2026-06-04
 
 ### Added
@@ -179,7 +191,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Basic project configuration files.
 - ESLint configuration files in both [flat](https://eslint.org/docs/latest/use/configure/configuration-files-new) and [legacy](https://eslint.org/docs/latest/use/configure/configuration-files) formats for validating **Vanilla JS** and **Node.js** projects.
 
-[5.0.0]: https://github.com/koshikishi/eslint-config/compare/v4.0.0...HEAD
+[5.1.0]: https://github.com/koshikishi/eslint-config/compare/v5.0.0...HEAD
+[5.0.0]: https://github.com/koshikishi/eslint-config/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/koshikishi/eslint-config/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/koshikishi/eslint-config/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/koshikishi/eslint-config/compare/v1.1.0...v2.0.0
