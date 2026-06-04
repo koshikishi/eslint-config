@@ -8,6 +8,13 @@ The ESLint shareable config designed for my personal projects.
 
 Use it as is or as a foundation for your own configuration file.
 
+## Prerequisites
+
+This package requires:
+
+- Node.js >= 24
+- ESLint >= 10
+
 ## Installation
 
 Install the package and `eslint` in your project:
@@ -22,7 +29,7 @@ This config bundles the following plugins and uses additional rules from them:
 
 - [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin) to replace deprecated formatting rules
 - [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file) to enforce a consistent naming pattern
-- [eslint-plugin-n](https://www.npmjs.com/package/eslint-plugin-n) for Node.js related rules
+- [eslint-plugin-n](https://www.npmjs.com/package/eslint-plugin-n) and [eslint-plugin-unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn) for Node.js related rules
 
 All plugins are direct dependencies and will be installed automatically.
 
@@ -33,68 +40,72 @@ This config is designed to validate **Vanilla JS** and **Node.js** projects and 
 For validating your **Vanilla JS** project use the default config:
 
 ```js
+import {defineConfig} from 'eslint/config';
 import config from '@koshikishi/eslint-config';
 import globals from 'globals';
 
-export default [
-  ...config,
+export default defineConfig([
   {
+    extends: [config],
     languageOptions: {
       globals: globals.browser,
     },
   },
-];
+]);
 ```
 
 For validating your **Node.js** project use the `node` config:
 
 ```js
+import {defineConfig} from 'eslint/config';
 import config from '@koshikishi/eslint-config/node';
 import globals from 'globals';
 
-export default [
-  ...config,
+export default defineConfig([
   {
+    extends: [config],
     languageOptions: {
       globals: globals.node,
     },
   },
-];
+]);
 ```
 
 ### Extending the config
 
 Add a `rules` key to your config, then add your overrides and additions there.
 
-For example, to add the `no-eval` rule and turn off the `no-console` rule:
+For example, to add the `no-eq-null` rule and turn off the `no-console` rule:
 
 ```js
+import {defineConfig} from 'eslint/config';
 import config from '@koshikishi/eslint-config';
 import globals from 'globals';
 
-export default [
-  ...config,
+export default defineConfig([
   {
+    extends: [config],
     languageOptions: {
       globals: globals.browser,
     },
     rules: {
-      'no-eval': 'error',
+      'no-eq-null': 'error',
       'no-console': 'off',
     },
   },
-];
+]);
 ```
 
 You can also override the additional rules from plugins:
 
 ```js
+import {defineConfig} from 'eslint/config';
 import config from '@koshikishi/eslint-config/node';
 import globals from 'globals';
 
-export default [
-  ...config,
+export default defineConfig([
   {
+    extends: [config],
     languageOptions: {
       globals: globals.node,
     },
@@ -103,7 +114,7 @@ export default [
       'n/file-extension-in-import': 'off',
     },
   },
-];
+]);
 ```
 
 ## Integration with VS Code
