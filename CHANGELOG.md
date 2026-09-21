@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.1.1] - 2026-09-21
+
+### Changed
+
+- Updated dependencies.
+
 ## [5.1.0] - 2026-06-04
 
 ### Changed
@@ -191,7 +197,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Basic project configuration files.
 - ESLint configuration files in both [flat](https://eslint.org/docs/latest/use/configure/configuration-files-new) and [legacy](https://eslint.org/docs/latest/use/configure/configuration-files) formats for validating **Vanilla JS** and **Node.js** projects.
 
-[5.1.0]: https://github.com/koshikishi/eslint-config/compare/v5.0.0...HEAD
+[5.1.1]: https://github.com/koshikishi/eslint-config/compare/v5.1.0...HEAD
+[5.1.0]: https://github.com/koshikishi/eslint-config/compare/v5.0.0...v5.1.0
 [5.0.0]: https://github.com/koshikishi/eslint-config/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/koshikishi/eslint-config/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/koshikishi/eslint-config/compare/v2.0.0...v3.0.0
